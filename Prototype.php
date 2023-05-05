@@ -1,3 +1,4 @@
+<?php
 // Classe protótipo
 class Produto {
     private $nome;
