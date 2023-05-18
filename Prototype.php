@@ -1,36 +1,35 @@
 <?php
 // Classe protótipo
-class Produto {
-    private $nome;
-    private $preco;
+class MyClass {
+    private $id;
+    private $name;
 
-    public function __construct($nome, $preco) {
-        $this->nome = $nome;
-        $this->preco = $preco;
+    public function __construct($id, $name) {
+        $this->id = $id;
+        $this->name = $name;
     }
 
     // Implementação do método mágico __clone()
     public function __clone() {
         // Copia as propriedades do objeto original
-        $this->nome = 'Cópia de ' . $this->nome;
-        $this->preco = $this->preco * 2;
+        $this->id = 'Cópia de ' . $this->id;
     }
 
-    public function getNome() {
-        return $this->nome;
+    public function getId() {
+        return $this->id;
     }
 
-    public function getPreco() {
-        return $this->preco;
+    public function getName() {
+        return $this->name;
     }
 }
 
 // Cria um objeto protótipo
-$prototipo = new Produto('Produto A', 10);
+$obj1 = new MyClass(10, 'Produto A');
 
 // Cria uma cópia do objeto protótipo
-$copia1 = clone $prototipo;
-$copia2 = clone $prototipo;
+$copia1 = clone $obj1;
+$copia2 = clone $obj1;
 
-echo $copia1->getNome() . ': ' . $copia1->getPreco() . PHP_EOL;
-echo $copia2->getNome() . ': ' . $copia2->getPreco() . PHP_EOL;
+echo $copia1->getName() . ': ' . $copia1->getId() . PHP_EOL;
+echo $copia2->getName() . ': ' . $copia2->getName() . PHP_EOL;

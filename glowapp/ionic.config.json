@@ -1,7 +1,0 @@
-{
-  "name": "glowapp",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
